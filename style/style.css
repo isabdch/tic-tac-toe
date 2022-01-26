@@ -114,13 +114,19 @@ a:hover {
     width: 120px;
     height: 120px;
     display: flex;
-    background-color: #463e43;
-    box-shadow: 0px 3px 1px #f930ee;
+    background-color: #2e2b2d;
+    box-shadow: 1px 1px 4px black;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.content:hover {
+    background-color: #463e43;
 }
 
 .c1 {
     grid-area: c1;
+    border-top-left-radius: 16px;
 }
 
 .c2 {
@@ -129,6 +135,7 @@ a:hover {
 
 .c3 {
     grid-area: c3;
+    border-top-right-radius: 16px;
 }
 
 .c4 {
@@ -145,6 +152,7 @@ a:hover {
 
 .c7 {
     grid-area: c7;
+    border-bottom-left-radius: 16px;
 }
 
 .c8 {
@@ -153,4 +161,6 @@ a:hover {
 
 .c9 {
     grid-area: c9;
+    border-bottom-right-radius: 16px;
 }
+
