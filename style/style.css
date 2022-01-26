@@ -18,6 +18,17 @@
     }
 }
 
+@keyframes startBtnMove {
+    from {
+        margin-right: 600px;
+        opacity: 0;
+    }
+
+    to {
+        margin-right: 0;
+    }
+}
+
 @font-face {
     font-family: myFont;
     src: url("./font/kubos-light.otf");
@@ -73,6 +84,7 @@ a:hover {
     background-color: #463e43;
     box-shadow: 0px 8px 1px rgb(8, 8, 8);
     transition: all 0.2s ease;
+    animation: startBtnMove 0.2s ease 0.3s 1 normal both;
 }
 
 #playBtn:hover {
