@@ -1,0 +1,144 @@
+@keyframes moveVid {
+    from {
+        height: 28em;
+    }
+
+    to {
+        height: 5em;
+    }
+}
+
+@keyframes showStage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: myFont;
+    src: url("./font/kubos-light.otf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: myFont;
+}
+
+body {
+    background-color: #1c1919;
+}
+
+a {
+    position: fixed;
+    opacity: 0.5;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+.startScreen {
+    margin-left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: absolute;
+}
+
+#vid {
+    height: 28em;
+    margin-top: 20px;
+}
+
+#playBtn {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #fceaf6;
+    text-shadow: 3px 0px 2px #f930ee;
+    background-color: #463e43;
+    box-shadow: 0px 8px 1px rgb(8, 8, 8);
+    transition: all 0.2s ease;
+}
+
+#playBtn:hover {
+    background-color: #5f545b;
+}
+
+#playBtn:active {
+    box-shadow: none;
+    margin-top: 8px;
+}
+
+.container {
+    height: 100vh;
+    display: none;
+    grid-template-areas: "c1 c2 c3"
+        "c4 c5 c6"
+        "c7 c8 c9";
+    gap: 0;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 13px;
+}
+
+.content {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    background-color: #463e43;
+    box-shadow: 0px 3px 1px #f930ee;
+    cursor: pointer;
+}
+
+.c1 {
+    grid-area: c1;
+}
+
+.c2 {
+    grid-area: c2;
+}
+
+.c3 {
+    grid-area: c3;
+}
+
+.c4 {
+    grid-area: c4;
+}
+
+.c5 {
+    grid-area: c5;
+}
+
+.c6 {
+    grid-area: c6;
+}
+
+.c7 {
+    grid-area: c7;
+}
+
+.c8 {
+    grid-area: c8;
+}
+
+.c9 {
+    grid-area: c9;
+}
