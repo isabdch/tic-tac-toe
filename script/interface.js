@@ -11,6 +11,7 @@ let c7 = document.querySelector(".c7");
 let c8 = document.querySelector(".c8");
 let c9 = document.querySelector(".c9");
 let returnBtn = document.querySelector("#returnBtn");
+let restartBtn = document.querySelector("#restartBtn");
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
@@ -36,6 +37,8 @@ function startGame() {
   c9.style.animation = "showStage 2.6s ease 0s 1 normal both";
   returnBtn.style.display = "block";
   returnBtn.style.animation = "showStage 2.5s ease 0s 1 normal both";
+  restartBtn.style.display = "block";
+  restartBtn.style.animation = "showStage 2.5s ease 0s 1 normal both";
 }
 
 function returnMenu() {
