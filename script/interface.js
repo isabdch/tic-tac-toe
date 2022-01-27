@@ -1,15 +1,15 @@
 let playBtn = document.querySelector("#playBtn");
 let stage = document.querySelector(".container");
 let video = document.querySelector("#vid");
-let c1 = document.querySelector("#c1");
-let c2 = document.querySelector("#c2");
-let c3 = document.querySelector("#c3");
-let c4 = document.querySelector("#c4");
-let c5 = document.querySelector("#c5");
-let c6 = document.querySelector("#c6");
-let c7 = document.querySelector("#c7");
-let c8 = document.querySelector("#c8");
-let c9 = document.querySelector("#c9");
+let c1 = document.querySelector(".c1");
+let c2 = document.querySelector(".c2");
+let c3 = document.querySelector(".c3");
+let c4 = document.querySelector(".c4");
+let c5 = document.querySelector(".c5");
+let c6 = document.querySelector(".c6");
+let c7 = document.querySelector(".c7");
+let c8 = document.querySelector(".c8");
+let c9 = document.querySelector(".c9");
 let returnBtn = document.querySelector("#returnBtn");
 
 playBtn.addEventListener("click", startGame);
@@ -64,3 +64,4 @@ function updateSquares() {
     }
   });
 }
+
