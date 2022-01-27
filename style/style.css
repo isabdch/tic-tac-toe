@@ -225,10 +225,12 @@ a:hover {
 
 .x::after {
     content: url("../media/cross.png");
+    animation: showStage 0.2s ease 0s 1 normal both;
 }
 
 .o::after {
     content: url("../media/rec.png");
+    animation: showStage 0.2s ease 0s 1 normal both;
 }
 
 #returnBtn {
