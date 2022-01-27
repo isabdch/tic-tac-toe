@@ -65,4 +65,15 @@ function updateSquare(position) {
   square.innerHTML = `<div class="${symbol}"></div>`;
 }
 
+function updateSquares() {
+  let squares = document.querySelectorAll(".content");
+  squares.forEach((square) => {
+    let position = square.id;
+    let symbol = board[position];
+
+    if (symbol != "") {
+      square.innerHTML = `<div class="${symbol}"></div>`;
+    }
+  });
+}
 
