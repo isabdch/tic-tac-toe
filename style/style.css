@@ -223,18 +223,12 @@ a:hover {
     border-bottom-right-radius: 16px;
 }
 
-.fa-times {
-    color: #f930ee;
-    font-size: 5rem;
-    text-shadow: -3px 3px 0px #fceaf6;
-    pointer-events: none;
+.x::after {
+    content: url("../media/cross.png");
 }
 
-.fa-circle {
-    color: #fceaf6;
-    font-size: 4rem;
-    text-shadow: -4px 4px 0px #f930ee;
-    pointer-events: none;
+.o::after {
+    content: url("../media/rec.png");
 }
 
 #returnBtn {

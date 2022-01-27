@@ -5,11 +5,13 @@ let symbols = ["o", "x"];
 
 // functions
 function handleMove(position) {
-  board[position] = symbols[playerTime];
+  if (board[position] == undefined) {
+    board[position] = symbols[playerTime];
 
-  if (playerTime == 0) {
-    playerTime = 1;
-  } else {
-    playerTime = 0;
+    if (playerTime == 0) {
+      playerTime = 1;
+    } else {
+      playerTime = 0;
+    }
   }
 }
