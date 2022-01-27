@@ -34,8 +34,8 @@ function playGame() {
 
 function returnMenu() {
     playBtn.style.display = "block";
-    playBtn.style.animation = "showPlayBtn 2.9s ease 0s 1 normal both";
-    video.style.animation = "smallerVid 1.5s ease 0s 1 normal both";
+    playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";
+    video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
     stage.style.display = "none";
     returnBtn.style.display = "none";
 }
