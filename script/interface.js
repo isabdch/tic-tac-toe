@@ -12,10 +12,16 @@ let c8 = document.querySelector(".c8");
 let c9 = document.querySelector(".c9");
 let returnBtn = document.querySelector("#returnBtn");
 
-playBtn.addEventListener("click", playGame);
+playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
+document.addEventListener("DOMContentLoaded", () => {
+  let squares = document.querySelectorAll(".content");
+  squares.forEach((square) => {
+    square.addEventListener("click", handleClick);
+  });
+});
 
-function playGame() {
+function startGame() {
   playBtn.style.display = "none";
   video.style.animation = "biggerVid 0.5s ease 0s 1 normal both";
   stage.style.display = "grid";
@@ -33,9 +39,13 @@ function playGame() {
 }
 
 function returnMenu() {
-    playBtn.style.display = "block";
-    playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";
-    video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
-    stage.style.display = "none";
-    returnBtn.style.display = "none";
+  playBtn.style.display = "block";
+  playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";
+  video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
+  stage.style.display = "none";
+  returnBtn.style.display = "none";
+}
+
+function handleClick() {  
+  
 }
