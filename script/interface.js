@@ -49,7 +49,11 @@ function returnMenu() {
 function handleClick(event) {
   let square = event.target;
   let position = square.id;
-  handleMove(position);
+  
+  if(handleMove(position)){
+    
+  };
+
   updateSquares();
 }
 
