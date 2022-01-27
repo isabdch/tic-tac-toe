@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     square.addEventListener("click", handleClick);
   });
 });
+restartBtn.addEventListener("click", restartGame);
 
 function startGame() {
   playBtn.style.display = "none";
@@ -80,3 +81,6 @@ function updateSquares() {
   });
 }
 
+function restartGame() {  
+  
+}
