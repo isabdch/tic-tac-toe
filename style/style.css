@@ -138,6 +138,8 @@ a:hover {
     width: 120px;
     height: 120px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #2e2b2d;
     box-shadow: 1px 1px 4px black;
     cursor: pointer;
@@ -186,6 +188,18 @@ a:hover {
 .c9 {
     grid-area: c9;
     border-bottom-right-radius: 16px;
+}
+
+.fa-times {
+    color: #f930ee;
+    font-size: 5rem;
+    text-shadow: -3px 3px 0px #fceaf6;
+}
+
+.fa-circle {
+    color: #fceaf6;
+    font-size: 4rem;
+    text-shadow: -4px 4px 0px #f930ee;
 }
 
 #returnBtn {
