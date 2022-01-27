@@ -1,4 +1,4 @@
-@keyframes moveVid {
+@keyframes biggerVid {
     from {
         height: 28em;
     }
@@ -8,12 +8,36 @@
     }
 }
 
+@keyframes smallerVid {
+    from {
+        height: 5em;
+    }
+
+    to {
+        height: 28em;
+    }
+}
+
 @keyframes showStage {
     from {
         opacity: 0;
     }
 
     to {
+        opacity: 1;
+    }
+}
+
+@keyframes showPlayBtn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
         opacity: 1;
     }
 }
@@ -164,3 +188,31 @@ a:hover {
     border-bottom-right-radius: 16px;
 }
 
+#returnBtn {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 88%;
+    transform: translate(-50%);
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #fceaf6;
+    text-shadow: 3px 0px 2px #f930ee;
+    background-color: #463e43;
+    box-shadow: 0px 8px 1px rgb(8, 8, 8);
+    transition: all 0.2s ease;
+}
+
+#returnBtn:hover {
+    background-color: #5f545b;
+}
+
+#returnBtn:active {
+    box-shadow: none;
+    margin-top: 8px;
+}

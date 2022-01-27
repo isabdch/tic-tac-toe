@@ -10,20 +10,32 @@ let c6 = document.querySelector(".c6");
 let c7 = document.querySelector(".c7");
 let c8 = document.querySelector(".c8");
 let c9 = document.querySelector(".c9");
+let returnBtn = document.querySelector("#returnBtn");
 
 playBtn.addEventListener("click", playGame);
+returnBtn.addEventListener("click", returnMenu);
 
-function playGame() {  
-    playBtn.style.display = "none";
-    video.style.animation = "moveVid 0.5s ease 0s 1 normal both";
-    stage.style.display = "grid";
-    c1.style.animation = "showStage 1s ease 0s 1 normal both";
-    c2.style.animation = "showStage 1.2s ease 0s 1 normal both";
-    c3.style.animation = "showStage 1.4s ease 0s 1 normal both";
-    c4.style.animation = "showStage 1.6s ease 0s 1 normal both";
-    c5.style.animation = "showStage 1.8s ease 0s 1 normal both";
-    c6.style.animation = "showStage 2s ease 0s 1 normal both";
-    c7.style.animation = "showStage 2.2s ease 0s 1 normal both";
-    c8.style.animation = "showStage 2.4s ease 0s 1 normal both";
-    c9.style.animation = "showStage 2.6s ease 0s 1 normal both"; 
+function playGame() {
+  playBtn.style.display = "none";
+  video.style.animation = "biggerVid 0.5s ease 0s 1 normal both";
+  stage.style.display = "grid";
+  c1.style.animation = "showStage 1s ease 0s 1 normal both";
+  c2.style.animation = "showStage 1.2s ease 0s 1 normal both";
+  c3.style.animation = "showStage 1.4s ease 0s 1 normal both";
+  c4.style.animation = "showStage 1.6s ease 0s 1 normal both";
+  c5.style.animation = "showStage 1.8s ease 0s 1 normal both";
+  c6.style.animation = "showStage 2s ease 0s 1 normal both";
+  c7.style.animation = "showStage 2.2s ease 0s 1 normal both";
+  c8.style.animation = "showStage 2.4s ease 0s 1 normal both";
+  c9.style.animation = "showStage 2.6s ease 0s 1 normal both";
+  returnBtn.style.display = "block";
+  returnBtn.style.animation = "showStage 2.5s ease 0s 1 normal both";
+}
+
+function returnMenu() {
+    playBtn.style.display = "block";
+    playBtn.style.animation = "showPlayBtn 2.9s ease 0s 1 normal both";
+    video.style.animation = "smallerVid 1.5s ease 0s 1 normal both";
+    stage.style.display = "none";
+    returnBtn.style.display = "none";
 }
