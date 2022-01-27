@@ -157,6 +157,8 @@ a:hover {
 
 .c2 {
     grid-area: c2;
+    border-right: 2px solid #f930ef93;
+    border-left: 2px solid #f930ef93;
 }
 
 .c3 {
@@ -166,14 +168,19 @@ a:hover {
 
 .c4 {
     grid-area: c4;
+    border-bottom: 2px solid #f930ef93;
+    border-top: 2px solid #f930ef93;
 }
 
 .c5 {
     grid-area: c5;
+    border: 2px solid #f930ef93;
 }
 
 .c6 {
     grid-area: c6;
+    border-top: 2px solid #f930ef93;
+    border-bottom: 2px solid #f930ef93;
 }
 
 .c7 {
@@ -183,6 +190,8 @@ a:hover {
 
 .c8 {
     grid-area: c8;
+    border-right: 2px solid #f930ef93;
+    border-left: 2px solid #f930ef93;
 }
 
 .c9 {
