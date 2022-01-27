@@ -161,6 +161,11 @@ a:hover {
     border-left: 2px solid #f930ef93;
 }
 
+.c2:hover {
+    border-right: 2px solid #f930ee;
+    border-left: 2px solid #f930ee;
+}
+
 .c3 {
     grid-area: c3;
     border-top-right-radius: 16px;
@@ -172,15 +177,29 @@ a:hover {
     border-top: 2px solid #f930ef93;
 }
 
+.c4:hover {
+    border-bottom: 2px solid #f930ee;
+    border-top: 2px solid #f930ee;
+}
+
 .c5 {
     grid-area: c5;
     border: 2px solid #f930ef93;
 }
 
+.c5:hover {
+    border: 2px solid #f930ee;
+}
+
 .c6 {
     grid-area: c6;
-    border-top: 2px solid #f930ef93;
     border-bottom: 2px solid #f930ef93;
+    border-top: 2px solid #f930ef93;
+}
+
+.c6:hover {
+    border-bottom: 2px solid #f930ee;
+    border-top: 2px solid #f930ee;
 }
 
 .c7 {
@@ -192,6 +211,11 @@ a:hover {
     grid-area: c8;
     border-right: 2px solid #f930ef93;
     border-left: 2px solid #f930ef93;
+}
+
+.c8:hover {
+    border-right: 2px solid #f930ee;
+    border-left: 2px solid #f930ee;
 }
 
 .c9 {
@@ -217,12 +241,12 @@ a:hover {
     left: 50%;
     top: 88%;
     transform: translate(-50%);
-    padding: 10px;
+    padding: 6px;
     padding-left: 40px;
     padding-right: 40px;
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     color: #fceaf6;
     text-shadow: 3px 0px 2px #f930ee;
