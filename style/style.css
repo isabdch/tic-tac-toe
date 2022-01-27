@@ -141,7 +141,7 @@ a:hover {
     background-color: #2e2b2d;
     box-shadow: 1px 1px 4px black;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .content:hover {
