@@ -113,4 +113,5 @@ function changePlayer() {
   } else {
     playerUpdater.style.marginTop = "0px";
   }
+ switchMode.removeEventListener("click", changePlayer);
 }
