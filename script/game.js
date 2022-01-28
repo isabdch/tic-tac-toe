@@ -1,6 +1,6 @@
 // initiate variables
 let board = ["", "", "", "", "", "", "", "", ""];
-let playerTime = 0;
+let playerTurn = 0;
 let symbols = ["o", "x"];
 let gameOver = false;
 let winStates = [
@@ -21,11 +21,11 @@ function handleMove(position) {
   }
 
   if (board[position] == "") {
-    board[position] = symbols[playerTime];
+    board[position] = symbols[playerTurn];
 
     gameOver = isWin();
 
-    playerTime = playerTime == 0 ? 1 : 0;
+    playerTurn = playerTurn == 0 ? 1 : 0;
   }
   return gameOver;
 }
@@ -46,4 +46,10 @@ function isWin() {
     }
   }
   return false;
+}
+
+function resetVariables() {  
+  board = ["", "", "", "", "", "", "", "", ""];
+  playerTurn = 0;
+  gameOver = false;
 }

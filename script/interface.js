@@ -1,5 +1,6 @@
 let playBtn = document.querySelector("#playBtn");
 let stage = document.querySelector(".container");
+let content = document.querySelectorAll(".content");
 let video = document.querySelector("#vid");
 let c1 = document.querySelector(".c1");
 let c2 = document.querySelector(".c2");
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     square.addEventListener("click", handleClick);
   });
 });
-restartBtn.addEventListener("click", restartGame);
+restartBtn.addEventListener("click", resetGame);
 
 function startGame() {
   playBtn.style.display = "none";
@@ -48,17 +49,19 @@ function returnMenu() {
   video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
   stage.style.display = "none";
   returnBtn.style.display = "none";
+  playBtn.innerHTML = "CONTINUE"
 }
 
 function handleClick(event) {
   let square = event.target;
   let position = square.id;
-  
-  if(handleMove(position)){
+
+  if (handleMove(position)) {
     setTimeout(() => {
-      alert(`The winner is ${playerTime}!`);
+      alert(`The winner is ${playerTurn}!`);
+      resetGame();
     }, 20);
-  };
+  }
 
   updateSquare(position);
 }
@@ -69,18 +72,14 @@ function updateSquare(position) {
   square.innerHTML = `<div class="${symbol}"></div>`;
 }
 
-function updateSquares() {
+function clearSquares() {
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
-    let position = square.id;
-    let symbol = board[position];
-
-    if (symbol != "") {
-      square.innerHTML = `<div class="${symbol}"></div>`;
-    }
+    square.innerHTML = "";
   });
 }
 
-function restartGame() {  
-  
+function resetGame() {
+  resetVariables();
+  clearSquares();
 }

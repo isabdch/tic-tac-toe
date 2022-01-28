@@ -69,18 +69,6 @@ body {
     background-color: #1c1919;
 }
 
-a {
-    position: fixed;
-    opacity: 0.5;
-    margin-left: 10px;
-    margin-top: 10px;
-    transition: all 0.4s ease;
-}
-
-a:hover {
-    opacity: 0.8;
-}
-
 .startScreen {
     margin-left: 50%;
     transform: translate(-50%);
