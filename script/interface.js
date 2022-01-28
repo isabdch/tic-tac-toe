@@ -110,7 +110,6 @@ function clearSquares() {
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
     square.innerHTML = "";
-    square.animation = "hideStage 2.6s ease 0s 1 normal both";
   });
 }
 
