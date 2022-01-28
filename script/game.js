@@ -48,8 +48,9 @@ function isWin() {
   return false;
 }
 
-function resetVariables() {  
+function resetVariables() {
   board = ["", "", "", "", "", "", "", "", ""];
   playerTurn = 0;
   gameOver = false;
 }
+

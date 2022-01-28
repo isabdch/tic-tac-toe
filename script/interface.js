@@ -14,6 +14,8 @@ let c9 = document.querySelector(".c9");
 let returnBtn = document.querySelector("#returnBtn");
 let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
+let playerUpdater = document.querySelector("#playerUpdater");
+let once = false;
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
@@ -24,6 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 restartBtn.addEventListener("click", resetGame);
+// switchMode.addEventListener("mouseover", () => {
+//   playerUpdater.style.backgroundColor = "#5e535a";
+// });
+// switchMode.addEventListener("mouseout", () => {
+//   playerUpdater.style.backgroundColor = "#463e43";
+// });
+switchMode.addEventListener("click", changePlayer);
 
 function startGame() {
   playBtn.style.display = "none";
@@ -52,7 +61,7 @@ function returnMenu() {
   stage.style.display = "none";
   returnBtn.style.display = "none";
   switchMode.style.display = "none";
-  playBtn.innerHTML = "CONTINUE"
+  playBtn.innerHTML = "CONTINUE";
   playBtn.style.paddingLeft = "20px";
   playBtn.style.paddingRight = "20px";
   playBtn.style.display = "block";
@@ -76,16 +85,34 @@ function updateSquare(position) {
   let square = document.getElementById(position.toString());
   let symbol = board[position];
   square.innerHTML = `<div class="${symbol}"></div>`;
+
+  if (playerTurn == 0) {
+    playerUpdater.style.marginTop = "0px";
+  } else {
+    playerUpdater.style.marginTop = "55px";
+  }
 }
 
 function clearSquares() {
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
     square.innerHTML = "";
+    square.animatation = "hideStage 2.6s ease 0s 1 normal both";
   });
 }
 
 function resetGame() {
   resetVariables();
   clearSquares();
+  playerUpdater.style.marginTop = "0px";
+}
+
+function changePlayer() {
+  playerTurn = playerTurn == 0 ? 1 : 0;
+  if (playerTurn == 1) {
+  playerUpdater.style.marginTop = "55px";
+  } else {
+    playerUpdater.style.marginTop = "0px";
+  }
+  once = true;
 }
