@@ -15,7 +15,6 @@ let returnBtn = document.querySelector("#returnBtn");
 let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
-let once = false;
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
@@ -75,7 +74,7 @@ function handleClick(event) {
     setTimeout(() => {
       alert(`The winner is ${playerTurn}!`);
       resetGame();
-    }, 20);
+    }, 250);
   }
 
   updateSquare(position);
@@ -110,9 +109,8 @@ function resetGame() {
 function changePlayer() {
   playerTurn = playerTurn == 0 ? 1 : 0;
   if (playerTurn == 1) {
-  playerUpdater.style.marginTop = "55px";
+    playerUpdater.style.marginTop = "55px";
   } else {
     playerUpdater.style.marginTop = "0px";
   }
-  once = true;
 }
