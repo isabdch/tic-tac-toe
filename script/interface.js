@@ -80,6 +80,7 @@ function handleClick(event) {
     switchMode.removeEventListener("click", changePlayer);
     switchMode.removeEventListener("mouseover", hoverIn);
     switchMode.removeEventListener("mouseout", hoverOut);
+    switchMode.style.cursor = "default";
   }
   let square = event.target;
   let position = square.id;
@@ -118,8 +119,9 @@ function resetGame() {
   clearSquares();
   playerUpdater.style.marginTop = "0px";
   switchMode.addEventListener("click", changePlayer);
+  switchMode.addEventListener("mouseover", hoverIn);
   switchMode.addEventListener("mouseout", hoverOut);
-  switchMode.addEventListener("click", changePlayer);
+  switchMode.style.cursor = "pointer";
 }
 
 function changePlayer() {
