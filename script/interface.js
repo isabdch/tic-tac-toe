@@ -13,6 +13,7 @@ let c8 = document.querySelector(".c8");
 let c9 = document.querySelector(".c9");
 let returnBtn = document.querySelector("#returnBtn");
 let restartBtn = document.querySelector("#restartBtn");
+let switchMode = document.querySelector(".switchMode");
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
@@ -41,15 +42,20 @@ function startGame() {
   returnBtn.style.animation = "showStage 2.5s ease 0s 1 normal both";
   restartBtn.style.display = "block";
   restartBtn.style.animation = "showStage 2.5s ease 0s 1 normal both";
+  switchMode.style.display = "flex";
+  switchMode.style.animation = "showStage 2s ease 0s 1 normal both";
 }
 
 function returnMenu() {
-  playBtn.style.display = "block";
   playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";
   video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
   stage.style.display = "none";
   returnBtn.style.display = "none";
+  switchMode.style.display = "none";
   playBtn.innerHTML = "CONTINUE"
+  playBtn.style.paddingLeft = "20px";
+  playBtn.style.paddingRight = "20px";
+  playBtn.style.display = "block";
 }
 
 function handleClick(event) {
