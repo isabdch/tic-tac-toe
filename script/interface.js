@@ -27,13 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 restartBtn.addEventListener("click", resetGame);
-switchMode.addEventListener("mouseover", () => {
-  playerUpdater.style.backgroundColor = "#5e535a";
-});
-switchMode.addEventListener("mouseout", () => {
-  playerUpdater.style.backgroundColor = "#463e43";
-});
+switchMode.addEventListener("mouseover", hoverIn);
+switchMode.addEventListener("mouseout", hoverOut);
 switchMode.addEventListener("click", changePlayer);
+
+function hoverIn() {
+  playerUpdater.style.backgroundColor = "#5e535a";
+  switchMode.style.border = "2px solid #f930ee";
+}
+
+function hoverOut() {
+  playerUpdater.style.backgroundColor = "#463e43";
+  switchMode.style.border = "2px solid #f930ef93";
+}
 
 function startGame() {
   playBtn.style.display = "none";
@@ -72,6 +78,8 @@ function handleClick(event) {
   clicked = true;
   if (clicked == true) {
     switchMode.removeEventListener("click", changePlayer);
+    switchMode.removeEventListener("mouseover", hoverIn);
+    switchMode.removeEventListener("mouseout", hoverOut);
   }
   let square = event.target;
   let position = square.id;
@@ -82,7 +90,6 @@ function handleClick(event) {
       resetGame();
     }, 300);
   }
-
   updateSquare(position);
 }
 
@@ -111,6 +118,8 @@ function resetGame() {
   clearSquares();
   playerUpdater.style.marginTop = "0px";
   switchMode.addEventListener("click", changePlayer);
+  switchMode.addEventListener("mouseout", hoverOut);
+  switchMode.addEventListener("click", changePlayer);
 }
 
 function changePlayer() {
@@ -120,5 +129,4 @@ function changePlayer() {
   } else {
     playerUpdater.style.marginTop = "0px";
   }
-  // switchMode.removeEventListener("click", changePlayer);
 }
