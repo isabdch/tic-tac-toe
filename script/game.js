@@ -1,6 +1,6 @@
 // initiate variables
 let board = ["", "", "", "", "", "", "", "", ""];
-let playerTurn;
+let playerTurn = 0;
 let symbols = ["o", "x"];
 let gameOver = false;
 let winStates = [

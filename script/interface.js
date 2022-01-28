@@ -15,6 +15,7 @@ let returnBtn = document.querySelector("#returnBtn");
 let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
+let clicked = false;
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
@@ -68,6 +69,10 @@ function returnMenu() {
 }
 
 function handleClick(event) {
+  clicked = true;
+  if (clicked == true) {
+    switchMode.removeEventListener("click", changePlayer);
+  }
   let square = event.target;
   let position = square.id;
 
@@ -115,5 +120,5 @@ function changePlayer() {
   } else {
     playerUpdater.style.marginTop = "0px";
   }
-  switchMode.removeEventListener("click", changePlayer);
+  // switchMode.removeEventListener("click", changePlayer);
 }
