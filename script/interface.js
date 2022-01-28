@@ -19,18 +19,19 @@ let playerUpdater = document.querySelector("#playerUpdater");
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
 document.addEventListener("DOMContentLoaded", () => {
+  resetGame();
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
     square.addEventListener("click", handleClick);
   });
 });
 restartBtn.addEventListener("click", resetGame);
-// switchMode.addEventListener("mouseover", () => {
-//   playerUpdater.style.backgroundColor = "#5e535a";
-// });
-// switchMode.addEventListener("mouseout", () => {
-//   playerUpdater.style.backgroundColor = "#463e43";
-// });
+switchMode.addEventListener("mouseover", () => {
+  playerUpdater.style.backgroundColor = "#5e535a";
+});
+switchMode.addEventListener("mouseout", () => {
+  playerUpdater.style.backgroundColor = "#463e43";
+});
 switchMode.addEventListener("click", changePlayer);
 
 function startGame() {
@@ -74,7 +75,7 @@ function handleClick(event) {
     setTimeout(() => {
       alert(`The winner is ${playerTurn}!`);
       resetGame();
-    }, 250);
+    }, 300);
   }
 
   updateSquare(position);
@@ -96,7 +97,7 @@ function clearSquares() {
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
     square.innerHTML = "";
-    square.animatation = "hideStage 2.6s ease 0s 1 normal both";
+    square.animation = "hideStage 2.6s ease 0s 1 normal both";
   });
 }
 
@@ -104,6 +105,7 @@ function resetGame() {
   resetVariables();
   clearSquares();
   playerUpdater.style.marginTop = "0px";
+  switchMode.addEventListener("click", changePlayer);
 }
 
 function changePlayer() {
@@ -113,5 +115,5 @@ function changePlayer() {
   } else {
     playerUpdater.style.marginTop = "0px";
   }
- switchMode.removeEventListener("click", changePlayer);
+  switchMode.removeEventListener("click", changePlayer);
 }

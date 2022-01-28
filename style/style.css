@@ -147,7 +147,7 @@ body {
     border-radius: 50px;
     background-color: #2e2b2d;
     border: 2px solid #f930ef93;
-    margin-left: 400px;
+    margin-left: 400px; /* 40px a menos do board*/
     display: none;
     flex-flow: column wrap;
     align-items: center;
