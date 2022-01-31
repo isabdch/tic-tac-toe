@@ -357,3 +357,55 @@ body {
 #restartBtn:active {
     background-color: #2e2b2d;
 }
+
+.whoWins {
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 200px;
+    width: 500px;    
+    background-color: #463e43;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+#winVid {
+    border-radius: 16px;
+    position: absolute;
+    border: 4px dotted #fceaf6;
+}
+
+p, #confirm {
+    position: absolute;
+    color: #fceaf6;
+}
+
+p {
+    text-shadow: 3px 0px 2px #f930ee;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+}
+
+#confirm {
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 10px;
+    background-color: #00000000;
+    border: none;
+    color: #fceaf6b6;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#confirm:hover {
+    color: #fceaf6;
+}
+
+
+

@@ -17,6 +17,7 @@ let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
 let trashCan = document.querySelector(".trash");
+let confirmBtn = document.querySelector("#confirm");
 let clicked = false;
 
 playBtn.addEventListener("click", startGame);
@@ -42,6 +43,7 @@ switchMode.addEventListener("mouseover", hoverIn);
 switchMode.addEventListener("mouseout", hoverOut);
 switchMode.addEventListener("click", changePlayer);
 trashCan.addEventListener("click", clearScore);
+confirmBtn.addEventListener("click", closeWindow);
 
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
@@ -109,9 +111,8 @@ function handleClick(event) {
 
   if (handleMove(position)) {
     setTimeout(() => {
-      alert(`The winner is ${playerTurn}!`);
+      youWin();
       updateScore();
-      resetGame();
     }, 300);
   }
   updateSquare(position);
@@ -172,4 +173,34 @@ function clearScore() {
   scoreO = 0;
   scoreX = 0;
   scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
+}
+
+function youWin() {  
+  let whoWins = document.querySelector(".whoWins");
+  let startScreen = document.querySelector(".startScreen");
+  let p = document.querySelector("p");
+
+  whoWins.style.display = "flex";
+  whoWins.style.animation = "";
+  stage.style.filter = "blur(3px)";
+  startScreen.style.filter = "blur(3px)";
+  switchMode.style.filter = "blur(3px)";
+
+  if (playerTurn == 1) {
+    p.innerHTML = "Player <sub><img src='../media/rec.png' height='25px'></sub> win!"
+  } else {
+    p.innerHTML = "Player <sub><img src='../media/cross.png' height='25px'></sub> win!"
+  }
+}
+
+function closeWindow() {  
+  let whoWins = document.querySelector(".whoWins");
+  let startScreen = document.querySelector(".startScreen");
+  
+  resetGame();
+  whoWins.style.display = "none";
+  whoWins.style.animation = "";
+  stage.style.filter = "none";
+  startScreen.style.filter = "none";
+  switchMode.style.filter = "none";
 }
