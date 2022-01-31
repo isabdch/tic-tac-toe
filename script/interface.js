@@ -16,17 +16,24 @@ let returnBtn = document.querySelector("#returnBtn");
 let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
+let trashCan = document.querySelector(".trash");
 let clicked = false;
-let sum;
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
 document.addEventListener("DOMContentLoaded", () => {
+  scoreO = JSON.parse(localStorage.getItem("keepScoreO"));
+  scoreX = JSON.parse(localStorage.getItem("keepScoreX"));
+  if (scoreO == null) {
+    scoreO = 0;
+  }
+  if (scoreX == null) {
+    scoreX = 0;
+  }
+  scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
+
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
-    scoreO = JSON.parse(localStorage.getItem("keepScoreO"));
-    scoreX = JSON.parse(localStorage.getItem("keepScoreX"));
-    scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
     square.addEventListener("click", handleClick);
   });
 });
@@ -34,6 +41,7 @@ restartBtn.addEventListener("click", resetGame);
 switchMode.addEventListener("mouseover", hoverIn);
 switchMode.addEventListener("mouseout", hoverOut);
 switchMode.addEventListener("click", changePlayer);
+trashCan.addEventListener("click", clearScore);
 
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
@@ -47,8 +55,11 @@ function hoverOut() {
 
 function startGame() {
   playBtn.style.display = "none";
-  scoreDiv.style.display = "block";
+  trashCan.style.display = "inline";
+  trashCan.style.fontSize = "0.7rem";
+  scoreDiv.style.display = "inline";
   scoreDiv.style.fontSize = "0.7rem";
+  trashCan.style.animation = "showStage 2.6s ease 0s 1 normal both";
   scoreDiv.style.animation = "showStage 2.6s ease 0s 1 normal both";
   video.style.animation = "biggerVid 0.5s ease 0s 1 normal both";
   stage.style.display = "grid";
@@ -72,6 +83,8 @@ function startGame() {
 function returnMenu() {
   scoreDiv.style.fontSize = "1rem";
   scoreDiv.style.animation = "showPlayBtn 1s ease 0s 1 normal both";
+  trashCan.style.fontSize = "1rem";
+  trashCan.style.animation = "showPlayBtn 1s ease 0s 1 normal both";
   playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";
   video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
   stage.style.display = "none";
@@ -152,4 +165,11 @@ function updateScore() {
     scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
     JSON.stringify(localStorage.setItem("keepScoreX", scoreX));
   }
+}
+
+function clearScore() {
+  localStorage.clear();
+  scoreO = 0;
+  scoreX = 0;
+  scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
 }
