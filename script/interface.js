@@ -181,10 +181,10 @@ function youWin() {
   let p = document.querySelector("p");
 
   whoWins.style.display = "flex";
-  whoWins.style.animation = "";
-  stage.style.filter = "blur(3px)";
-  startScreen.style.filter = "blur(3px)";
-  switchMode.style.filter = "blur(3px)";
+  whoWins.style.animation = "openWindow 0.4s ease 0s 1 normal both";
+  stage.style.animation = "withFilter 0.4s ease 0s 1 normal both";
+  startScreen.style.animation = "withFilter 0.4s ease 0s 1 normal both";
+  switchMode.style.animation = "withFilter 0.4s ease 0s 1 normal both";
 
   if (playerTurn == 1) {
     p.innerHTML = "Player <sub><img src='../media/rec.png' height='25px'></sub> win!"
@@ -198,9 +198,8 @@ function closeWindow() {
   let startScreen = document.querySelector(".startScreen");
 
   resetGame();
-  whoWins.style.display = "none";
-  whoWins.style.animation = "";
-  stage.style.filter = "none";
-  startScreen.style.filter = "none";
-  switchMode.style.filter = "none";
+  whoWins.style.animation = "closeWindow 0.5s ease 0s 1 normal both";
+  stage.style.animation = "noFilter 0.6s ease 0s 1 normal both";
+  startScreen.style.animation = "noFilter 0.6s ease 0s 1 normal both";
+  switchMode.style.animation = "noFilter 0.6s ease 0s 1 normal both";
 }

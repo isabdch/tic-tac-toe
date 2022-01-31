@@ -83,6 +83,50 @@
     }
 }
 
+@keyframes openWindow {
+    from {
+        opacity: 0;
+        display: none;
+    }
+
+    to {
+        opacity: 1;
+        display: flex;
+    }
+}
+
+@keyframes closeWindow {
+    from {
+        opacity: 1;
+        display: flex;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes withFilter {
+    from {
+        filter: none;
+    }
+
+    to {
+        filter: blur(3px);
+    }
+}
+
+@keyframes noFilter {
+    from {
+        filter: blur(3px);
+    }
+
+    to {
+        filter: none;
+    }
+}
+
 @font-face {
     font-family: myFont;
     src: url("./font/kubos-light.otf");
