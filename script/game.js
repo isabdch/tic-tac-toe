@@ -55,4 +55,3 @@ function resetVariables() {
   playerTurn = 0;
   gameOver = false;
 }
-

@@ -114,8 +114,8 @@ body {
 
 #scoreDiv {
     display: none;
-    color: #fceaf6;
-    text-shadow: 3px 0px 2px #f930ee;
+    color: #fceaf6e3;
+    text-shadow: 3px 0px 2px #000000;
     margin-bottom: 20px;
     margin-top: -2px;
     text-align: center;
@@ -157,7 +157,8 @@ body {
     background-color: #2e2b2d;
     border: 2px solid #f930ef93;
     box-shadow: 1px 1px 4px black;
-    margin-left: 400px; /* 40px a menos do board*/
+    margin-left: 400px;
+    /* 40px a menos do board*/
     display: none;
     flex-flow: column wrap;
     align-items: center;
@@ -173,10 +174,10 @@ body {
     transition: all 0.3s ease;
 }
 
-#playerO{
+#playerO {
     position: absolute;
     margin-top: 10px;
-} 
+}
 
 #playerX {
     position: absolute;
@@ -306,7 +307,8 @@ body {
     gap: 15px;
 }
 
-#returnBtn, #restartBtn {
+#returnBtn,
+#restartBtn {
     padding: 6px;
     padding-left: 30px;
     padding-right: 30px;
@@ -326,10 +328,12 @@ body {
     text-shadow: 3px 0px 2px #f930ee;
 }
 
-#returnBtn:hover, #restartBtn:hover {
+#returnBtn:hover,
+#restartBtn:hover {
     background-color: #463e43;
 }
 
-#returnBtn:active, #restartBtn:active {
+#returnBtn:active,
+#restartBtn:active {
     background-color: #2e2b2d;
 }
