@@ -43,7 +43,7 @@ switchMode.addEventListener("mouseover", hoverIn);
 switchMode.addEventListener("mouseout", hoverOut);
 switchMode.addEventListener("click", changePlayer);
 trashCan.addEventListener("click", clearScore);
-whoWins.addEventListener("click", closeWindow);
+document.addEventListener("click", closeWindow);
 
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
@@ -113,6 +113,7 @@ function handleClick(event) {
     setTimeout(() => {
       youWin();
       updateScore();
+      resetGame();
     }, 300);
   }
   updateSquare(position);
@@ -176,15 +177,20 @@ function clearScore() {
 }
 
 function youWin() {  
-  let whoWins = document.querySelector(".whoWins");
+  let whoWins = document.createElement("div");
+  whoWins.classList.add("whoWins");
+  document.querySelector("body").appendChild(whoWins);
+
+  whoWins.innerHTML = '<video id="winVid" src="./media/win-vid.mp4" muted autoplay loop></video><p>PLAYER WIN!</p><span>click anywhere to continue</span>'
+  
   let startScreen = document.querySelector(".startScreen");
   let p = document.querySelector("p");
 
   whoWins.style.display = "flex";
-  whoWins.style.animation = "openWindow 0.4s ease 0s 1 normal both";
-  stage.style.animation = "withFilter 0.4s ease 0s 1 normal both";
-  startScreen.style.animation = "withFilter 0.4s ease 0s 1 normal both";
-  switchMode.style.animation = "withFilter 0.4s ease 0s 1 normal both";
+  whoWins.style.animation = "showStage 0.4s ease 0s 1 normal both";
+  stage.style.filter = "blur(3px)";
+  startScreen.style.filter = "blur(3px)";
+  switchMode.style.filter = "blur(3px)";
 
   if (playerTurn == 1) {
     p.innerHTML = "Player <sub><img src='../media/rec.png' height='25px'></sub> win!"
@@ -197,9 +203,9 @@ function closeWindow() {
   let whoWins = document.querySelector(".whoWins");
   let startScreen = document.querySelector(".startScreen");
 
-  resetGame();
-  whoWins.style.animation = "closeWindow 0.5s ease 0s 1 normal both";
-  stage.style.animation = "noFilter 0.6s ease 0s 1 normal both";
-  startScreen.style.animation = "noFilter 0.6s ease 0s 1 normal both";
-  switchMode.style.animation = "noFilter 0.6s ease 0s 1 normal both";
+  whoWins.style.animation = "hideStage 0.4s ease 0s 1 normal both";
+  document.querySelector("body").removeChild(whoWins);
+  stage.style.filter = "none";
+  startScreen.style.filter = "none";
+  switchMode.style.filter = "none";
 }

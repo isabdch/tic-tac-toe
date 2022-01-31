@@ -83,50 +83,6 @@
     }
 }
 
-@keyframes openWindow {
-    from {
-        opacity: 0;
-        display: none;
-    }
-
-    to {
-        opacity: 1;
-        display: flex;
-    }
-}
-
-@keyframes closeWindow {
-    from {
-        opacity: 1;
-        display: flex;
-    }
-
-    to {
-        opacity: 0;
-        display: none;
-    }
-}
-
-@keyframes withFilter {
-    from {
-        filter: none;
-    }
-
-    to {
-        filter: blur(3px);
-    }
-}
-
-@keyframes noFilter {
-    from {
-        filter: blur(3px);
-    }
-
-    to {
-        filter: none;
-    }
-}
-
 @font-face {
     font-family: myFont;
     src: url("./font/kubos-light.otf");
@@ -221,8 +177,8 @@ body {
     background-color: #2e2b2d;
     border: 2px solid #f930ef93;
     box-shadow: 1px 1px 4px black;
-    margin-left: 400px;
-    /* 40px a menos do board*/
+    margin-left: 420px;
+    /* 20px a menos do board*/
     display: none;
     flex-flow: column wrap;
     align-items: center;
@@ -241,11 +197,13 @@ body {
 #playerO {
     position: absolute;
     margin-top: 10px;
+    pointer-events: none;
 }
 
 #playerX {
     position: absolute;
     margin-top: 72px;
+    pointer-events: none;
 }
 
 .container {
@@ -406,10 +364,10 @@ body {
     display: none;
     top: 50%;
     left: 50%;
+    height: 100%;
+    width: 100%;
     transform: translate(-50%, -50%);
     position: absolute;
-    height: 100%;
-    width: 100%;    
     background-color: #463e4300;
     box-shadow: 1px 1px 4px black;
     border-radius: 16px;
