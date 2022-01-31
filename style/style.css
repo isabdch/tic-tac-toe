@@ -110,7 +110,17 @@ body {
 
 #vid {
     height: 28em;
-    margin-top: 20px;
+}
+
+#scoreDiv {
+    display: none;
+    color: #fceaf6;
+    text-shadow: 3px 0px 2px #f930ee;
+    margin-bottom: 20px;
+    margin-top: -2px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 1rem;
 }
 
 #playBtn {

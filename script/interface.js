@@ -1,3 +1,4 @@
+let scoreDiv = document.querySelector("#scoreDiv");
 let playBtn = document.querySelector("#playBtn");
 let stage = document.querySelector(".container");
 let content = document.querySelectorAll(".content");
@@ -16,11 +17,11 @@ let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
 let clicked = false;
+let sum;
 
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
 document.addEventListener("DOMContentLoaded", () => {
-  resetGame();
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
     square.addEventListener("click", handleClick);
@@ -43,6 +44,8 @@ function hoverOut() {
 
 function startGame() {
   playBtn.style.display = "none";
+  scoreDiv.style.display = "block";
+  scoreDiv.style.animation = "showStage 2.6s ease 0s 1 normal both";
   video.style.animation = "biggerVid 0.5s ease 0s 1 normal both";
   stage.style.display = "grid";
   c1.style.animation = "showStage 1s ease 0s 1 normal both";
@@ -88,6 +91,7 @@ function handleClick(event) {
   if (handleMove(position)) {
     setTimeout(() => {
       alert(`The winner is ${playerTurn}!`);
+      updateScore();
       resetGame();
     }, 300);
   }
@@ -97,7 +101,7 @@ function handleClick(event) {
 function updateSquare(position) {
   let square = document.getElementById(position.toString());
   let symbol = board[position];
-  square.innerHTML = `<div class="${symbol}"></div>`;
+  square.innerHTML = `<div class="${symbol} anim"></div>`;
 
   if (playerTurn == 0) {
     playerUpdater.style.marginTop = "0px";
@@ -131,3 +135,14 @@ function changePlayer() {
     playerUpdater.style.marginTop = "0px";
   }
 }
+
+function updateScore() {  
+  if (gameOver == true && playerTurn == 1) {
+    scoreO++
+    scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`
+  } else if (gameOver == true && playerTurn == 0) {
+    scoreX++
+    scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`
+  }
+}
+

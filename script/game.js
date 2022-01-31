@@ -13,6 +13,8 @@ let winStates = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+let scoreO = 0;
+let scoreX = 0;
 
 // functions
 function handleMove(position) {
