@@ -17,7 +17,7 @@ let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
 let trashCan = document.querySelector(".trash");
-let confirmBtn = document.querySelector("#confirm");
+let whoWins = document.querySelector(".whoWins");
 let clicked = false;
 
 playBtn.addEventListener("click", startGame);
@@ -43,7 +43,7 @@ switchMode.addEventListener("mouseover", hoverIn);
 switchMode.addEventListener("mouseout", hoverOut);
 switchMode.addEventListener("click", changePlayer);
 trashCan.addEventListener("click", clearScore);
-confirmBtn.addEventListener("click", closeWindow);
+whoWins.addEventListener("click", closeWindow);
 
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
@@ -196,7 +196,7 @@ function youWin() {
 function closeWindow() {  
   let whoWins = document.querySelector(".whoWins");
   let startScreen = document.querySelector(".startScreen");
-  
+
   resetGame();
   whoWins.style.display = "none";
   whoWins.style.animation = "";
