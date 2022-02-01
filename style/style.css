@@ -466,3 +466,24 @@ p {
         height: 60px;
     }
 }
+
+h4 {
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    position: absolute;
+    color: #fceaf66b;
+    font-size: 0.3rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #fceaf69c;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #fceaf6d8;
+}
