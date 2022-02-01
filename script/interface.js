@@ -205,7 +205,6 @@ function updateScore() {
 }
 
 function clearScore() {
-  console.log("is this working");
   localStorage.clear();
   scoreO = 0;
   scoreX = 0;

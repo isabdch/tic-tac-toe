@@ -211,9 +211,10 @@ body {
 }
 
 .switchMode {
-    position: absolute;
+    /* position: absolute;
+    /*
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%); */
     height: 120px;
     width: 50px;
     border-radius: 50px;
@@ -442,4 +443,8 @@ p {
     color: #fceaf6be;
     margin-top: 175px;
     letter-spacing: 2px;
+}
+
+@media screen and (max-width: 2150px) {
+    
 }
