@@ -55,3 +55,14 @@ function resetVariables() {
   playerTurn = 0;
   gameOver = false;
 }
+
+function isTiedGame() {  
+  for (let i of board) {
+    if (i != "" && isWin() == false) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+

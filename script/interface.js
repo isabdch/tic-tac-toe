@@ -116,6 +116,12 @@ function handleClick(event) {
       resetGame();
     }, 300);
   }
+
+  let hasTied = isTiedGame();
+  if (hasTied == true) {
+    setTimeout(() => resetGame(), 800);
+  }
+
   updateSquare(position);
 }
 
@@ -176,13 +182,14 @@ function clearScore() {
   scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
 }
 
-function youWin() {  
+function youWin() {
   let whoWins = document.createElement("div");
   whoWins.classList.add("whoWins");
   document.querySelector("body").appendChild(whoWins);
 
-  whoWins.innerHTML = '<video id="winVid" src="./media/win-vid.mp4" muted autoplay loop></video><p>PLAYER WIN!</p><span>click anywhere to continue</span>'
-  
+  whoWins.innerHTML =
+    '<video id="winVid" src="./media/win-vid.mp4" muted autoplay loop></video><p>PLAYER WIN!</p><span>click anywhere to continue</span>';
+
   let startScreen = document.querySelector(".startScreen");
   let p = document.querySelector("p");
 
@@ -193,13 +200,15 @@ function youWin() {
   switchMode.style.filter = "blur(3px)";
 
   if (playerTurn == 1) {
-    p.innerHTML = "Player <sub><img src='../media/rec.png' height='25px'></sub> win!"
+    p.innerHTML =
+      "Player <sub><img src='../media/rec.png' height='25px'></sub> win!";
   } else {
-    p.innerHTML = "Player <sub><img src='../media/cross.png' height='25px'></sub> win!"
+    p.innerHTML =
+      "Player <sub><img src='../media/cross.png' height='25px'></sub> win!";
   }
 }
 
-function closeWindow() {  
+function closeWindow() {
   let whoWins = document.querySelector(".whoWins");
   let startScreen = document.querySelector(".startScreen");
 
