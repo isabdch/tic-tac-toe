@@ -56,22 +56,21 @@ function resetVariables() {
   gameOver = false;
 }
 
-function isTiedGame() {  
-    if (
-      board[0] != "" && 
-      board[1] != "" &&
-      board[2] != "" &&
-      board[3] != "" &&
-      board[4] != "" &&
-      board[5] != "" &&
-      board[6] != "" &&
-      board[7] != "" &&
-      board[8] != "" &&
-      isWin() == false
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+function isTiedGame() {
+  if (
+    board[0] != "" &&
+    board[1] != "" &&
+    board[2] != "" &&
+    board[3] != "" &&
+    board[4] != "" &&
+    board[5] != "" &&
+    board[6] != "" &&
+    board[7] != "" &&
+    board[8] != "" &&
+    isWin() == false
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
-

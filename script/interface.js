@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (scoreX == null) {
     scoreX = 0;
   }
-  scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
+  scoreDiv.innerHTML = `Player <i class="fa-regular fa-circle"></i> - ${scoreO} &nbsp&nbsp&nbsp Player <i class="fa-regular fa-x"></i> - ${scoreX}`;
 
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
@@ -166,11 +166,11 @@ function changePlayer() {
 function updateScore() {
   if (gameOver == true && playerTurn == 1) {
     scoreO++;
-    scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
+    scoreDiv.innerHTML = `Player <i class="fa-regular fa-circle"></i> - ${scoreO} &nbsp&nbsp&nbsp Player <i class="fa-regular fa-x"></i> - ${scoreX}`;
     JSON.stringify(localStorage.setItem("keepScoreO", scoreO));
   } else if (gameOver == true && playerTurn == 0) {
     scoreX++;
-    scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
+    scoreDiv.innerHTML = `Player <i class="fa-regular fa-circle"></i> - ${scoreO} &nbsp&nbsp&nbsp Player <i class="fa-regular fa-x"></i> - ${scoreX}`;
     JSON.stringify(localStorage.setItem("keepScoreX", scoreX));
   }
 }
@@ -179,7 +179,7 @@ function clearScore() {
   localStorage.clear();
   scoreO = 0;
   scoreX = 0;
-  scoreDiv.innerHTML = `Player O - ${scoreO} &nbsp&nbsp&nbsp Player X - ${scoreX}`;
+  scoreDiv.innerHTML = `Player <i class="fa-regular fa-circle"></i> - ${scoreO} &nbsp&nbsp&nbsp Player <i class="fa-regular fa-x"></i> - ${scoreX}`;
 }
 
 function youWin() {

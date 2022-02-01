@@ -124,6 +124,15 @@ body {
     margin-right: 10px;
 }
 
+.fa-circle {
+    font-size: 0.8rem;
+}
+
+.fa-x {
+    font-size: 0.9rem;
+    color: #f930ee;
+}
+
 .trash {
     display: none;
     font-size: 0.7rem;
@@ -382,7 +391,8 @@ body {
     border: 4px dotted #fceaf6;
 }
 
-p, span {
+p,
+span {
     position: absolute;
     color: #fceaf6;
 }
@@ -400,5 +410,3 @@ span {
     margin-top: 175px;
     letter-spacing: 2px;
 }
-
-
