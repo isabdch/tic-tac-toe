@@ -48,12 +48,10 @@ scoreDiv.addEventListener("click", clearScore);
 
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
-  // switchMode.style.border = "2px solid #f930ee";
 }
 
 function hoverOut() {
   playerUpdater.style.backgroundColor = "#463e43";
-  // switchMode.style.border = "2px solid #f930ef93";
 }
 
 function startGame() {
@@ -90,6 +88,8 @@ function returnMenu() {
   if (window.matchMedia("(max-width:537px)").matches) {
     scoreDiv.style.fontSize = "0.7rem";
     playBtn.style.fontSize = "0.7rem";
+    video.style.height = "20em";
+    video.style.animation = "smallerVidMq 0.8s ease 0s 1 normal both"
   } 
   scoreDiv.style.animation = "showPlayBtn 1s ease 0s 1 normal both";
   playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";

@@ -18,6 +18,16 @@
     }
 }
 
+@keyframes smallerVidMq {
+    from {
+        height: 5em;
+    }
+
+    to {
+        height: 20em;
+    }
+}
+
 @keyframes showStage {
     from {
         opacity: 0;
@@ -473,6 +483,10 @@ a:hover {
     .scorePO, .scorePX, #playBtn {
         font-size: 0.7rem;
     }
+
+    #vid {
+        height: 20em;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -482,7 +496,7 @@ a:hover {
     
     .switchMode {
         margin: 0;
-        top: 200px;
+        top: 12%;
         transform: rotate(90Deg);
         position: fixed;
         box-shadow: 1px -1px 4px #000000;
