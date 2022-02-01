@@ -112,39 +112,46 @@ body {
     height: 28em;
 }
 
+.fa-regular, .fa-solid {
+    color: #fceaf6;
+}
+
 .scoreAndTrash {
+    display: none;
     margin-bottom: 30px;
 }
 
-#scoreDiv {
-    display: none;
-    color: #fceaf6f3;
+.scorePO, .scorePX {
+    display: inline;
+    position: relative;
+    background-color: #463e43;
+    color: #fceaf6;
     text-shadow: 3px 0px 2px #000000;
-    font-size: 1rem;
-    margin-right: 10px;
+    padding: 10px;
+    padding-right: 0;
+    border-radius: 5px;
+    box-shadow: 3px 0px 2px #000000;
+    word-spacing: 3px;
+}
+
+#scrO, #scrX {
+    display: inline;
+    position: relative;
+    background-color: #f930ee;
+    text-shadow: none;
+    padding: 10px;
+    background-clip:padding-box;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#scrO {
+    color: #2e2b2d;
+    background-color: #fceaf6;
 }
 
 .fa-x {
     color: #f930ee;
-}
-
-.trash {
-    display: none;
-    font-size: 0.7rem;
-    border: none;
-    background-color: #1c191900;
-    text-shadow: 3px 0px 2px #000000;
-    color: #fceaf6f3;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.trash:hover {
-    transform: scale(1.3);
-}
-
-.fa-trash-can {
-    pointer-events: none;
 }
 
 #playBtn {
