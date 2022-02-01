@@ -158,7 +158,7 @@ body {
     color: #fceaf6;
     text-shadow: 3px 0px 2px #f930ee;
     background-color: #2e2b2d;
-    box-shadow: 1px 1px 4px black;
+    box-shadow: 1px 1px 4px #000000;
     transition: all 0.2s ease;
     animation: startBtnMove 0.2s ease 0.3s 1 normal both;
 }
@@ -180,7 +180,7 @@ body {
     border-radius: 50px;
     background-color: #2e2b2d;
     border: 2px solid #f930ef93;
-    box-shadow: 1px 1px 4px black;
+    box-shadow: 1px 1px 4px #000000;
     margin-left: 420px;
     /* 20px a menos do board*/
     display: none;
@@ -231,7 +231,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #2e2b2d;
-    box-shadow: 1px 1px 4px black;
+    box-shadow: 1px 1px 4px #000000;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -373,7 +373,6 @@ body {
     transform: translate(-50%, -50%);
     position: absolute;
     background-color: #463e4300;
-    box-shadow: 1px 1px 4px black;
     border-radius: 16px;
     justify-content: center;
     align-items: center;
@@ -383,7 +382,7 @@ body {
 #winVid {
     border-radius: 16px;
     position: absolute;
-    border: 4px dotted #fceaf6;
+    box-shadow: 1px 1px 5px #000000;
 }
 
 p,

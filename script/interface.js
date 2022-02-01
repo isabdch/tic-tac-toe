@@ -167,15 +167,15 @@ function clearSquares() {
     c9.children[0].style.animation = "hideStage 0.2s ease 0s 1 normal both";
   }
 
-  setTimeout(() => (squares[0].innerHTML = ""), 1100);
-  setTimeout(() => (squares[1].innerHTML = ""), 1000);
-  setTimeout(() => (squares[2].innerHTML = ""), 900);
-  setTimeout(() => (squares[3].innerHTML = ""), 800);
-  setTimeout(() => (squares[4].innerHTML = ""), 700);
-  setTimeout(() => (squares[5].innerHTML = ""), 600);
-  setTimeout(() => (squares[6].innerHTML = ""), 500);
-  setTimeout(() => (squares[7].innerHTML = ""), 400);
-  setTimeout(() => (squares[8].innerHTML = ""), 300);
+  setTimeout(() => (squares[0].innerHTML = ""), 600);
+  setTimeout(() => (squares[1].innerHTML = ""), 550);
+  setTimeout(() => (squares[2].innerHTML = ""), 500);
+  setTimeout(() => (squares[3].innerHTML = ""), 450);
+  setTimeout(() => (squares[4].innerHTML = ""), 400);
+  setTimeout(() => (squares[5].innerHTML = ""), 350);
+  setTimeout(() => (squares[6].innerHTML = ""), 300);
+  setTimeout(() => (squares[7].innerHTML = ""), 250);
+  setTimeout(() => (squares[8].innerHTML = ""), 200);
 }
 
 function resetGame() {
@@ -229,9 +229,11 @@ function youWin() {
 
   whoWins.style.display = "flex";
   whoWins.style.animation = "showStage 0.4s ease 0s 1 normal both";
-  stage.style.filter = "blur(3px)";
-  startScreen.style.filter = "blur(3px)";
-  switchMode.style.filter = "blur(3px)";
+  setTimeout(() => {
+    stage.style.filter = "blur(3px)";
+    startScreen.style.filter = "blur(3px)";
+    switchMode.style.filter = "blur(3px)";
+  }, 30);
 
   if (playerTurn == 1) {
     p.innerHTML =
