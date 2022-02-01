@@ -83,6 +83,26 @@
     }
 }
 
+@keyframes withFilter {
+    from {
+        filter: none;
+    }
+
+    to {
+        filter: blur(3px);
+    }
+}
+
+@keyframes noFilter {
+    from {
+        filter: blur(3px);
+    }
+
+    to {
+        filter: none;
+    }
+}
+
 @font-face {
     font-family: myFont;
     src: url("./font/kubos-light.otf");
@@ -117,7 +137,7 @@ body {
 }
 
 .scoreAndTrash {
-    display: none;
+    display: inline;
     margin-bottom: 30px;
 }
 
@@ -127,11 +147,18 @@ body {
     background-color: #463e43;
     color: #fceaf6;
     text-shadow: 3px 0px 2px #000000;
-    padding: 10px;
+    padding: 8px;
     padding-right: 0;
     border-radius: 5px;
-    box-shadow: 3px 0px 2px #000000;
+    box-shadow: 1px 1px 4px #070707;
     word-spacing: 3px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.scorePO:hover, .scorePX:hover {
+    background-color: #2e2b2d;
 }
 
 #scrO, #scrX {
@@ -139,7 +166,7 @@ body {
     position: relative;
     background-color: #f930ee;
     text-shadow: none;
-    padding: 10px;
+    padding: 8px;
     background-clip:padding-box;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
@@ -152,6 +179,11 @@ body {
 
 .fa-x {
     color: #f930ee;
+}
+
+.single {
+    display: inline;
+    border: none;
 }
 
 #playBtn {
@@ -186,7 +218,7 @@ body {
     width: 50px;
     border-radius: 50px;
     background-color: #2e2b2d;
-    border: 2px solid #f930ef93;
+    /* border: 2px solid #f930ef93; */
     box-shadow: 1px 1px 4px #000000;
     margin-left: 420px;
     /* 20px a menos do board*/

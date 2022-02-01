@@ -17,6 +17,9 @@ let restartBtn = document.querySelector("#restartBtn");
 let switchMode = document.querySelector(".switchMode");
 let playerUpdater = document.querySelector("#playerUpdater");
 let whoWins = document.querySelector(".whoWins");
+let body = document.querySelector("body");
+let startScreen = document.querySelector(".startScreen");
+let p = document.querySelector("p");
 let clicked = false;
 
 playBtn.addEventListener("click", startGame);
@@ -30,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (scoreX == null) {
     scoreX = 0;
   }
-  scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO">${scoreO}</span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX">${scoreX}</span></div>`;
+  scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO"><div class="single" style="animation: showStage 1s ease 0s 1 normal both">${scoreO}</div></span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX"><div class="single" style="animation: showStage 1s ease 0s 1 normal both">${scoreX}</div></span></div>`;
 
   let squares = document.querySelectorAll(".content");
   squares.forEach((square) => {
@@ -45,17 +48,16 @@ scoreDiv.addEventListener("click", clearScore);
 
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
-  switchMode.style.border = "2px solid #f930ee";
+  // switchMode.style.border = "2px solid #f930ee";
 }
 
 function hoverOut() {
   playerUpdater.style.backgroundColor = "#463e43";
-  switchMode.style.border = "2px solid #f930ef93";
+  // switchMode.style.border = "2px solid #f930ef93";
 }
 
 function startGame() {
   playBtn.style.display = "none";
-  scoreDiv.style.display = "inline";
   scoreDiv.style.fontSize = "0.8rem";
   scoreDiv.style.animation = "showStage 2.6s ease 0s 1 normal both";
   video.style.animation = "biggerVid 0.5s ease 0s 1 normal both";
@@ -106,7 +108,6 @@ function handleClick(event) {
     setTimeout(() => {
       youWin();
       updateScore();
-      resetGame();
     }, 300);
   }
 
@@ -194,23 +195,57 @@ function changePlayer() {
 function updateScore() {
   if (gameOver == true && playerTurn == 1) {
     scoreO++;
-    scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO">${scoreO}</span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX">${scoreX}</span></div>`;
+    scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO"><div class="single" style="animation: showStage 0.5s ease 0s 1 normal both">${scoreO}</div></span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX"><div class="single">${scoreX}</div></span></div>`;
     JSON.stringify(localStorage.setItem("keepScoreO", scoreO));
   } else if (gameOver == true && playerTurn == 0) {
     scoreX++;
-    scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO">${scoreO}</span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX">${scoreX}</span></div>`;
+    scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO"><div class="single">${scoreO}</div></span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX"><div class="single" style="animation: showStage 0.5s ease 0s 1 normal both">${scoreX}</div></span></div>`;
     JSON.stringify(localStorage.setItem("keepScoreX", scoreX));
   }
 }
 
 function clearScore() {
-  console.log("is this working")
+  console.log("is this working");
   localStorage.clear();
   scoreO = 0;
   scoreX = 0;
-  scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO">${scoreO}</span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX">${scoreX}</span></div>`;
+  scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO"><div class="single" style="animation: showStage 1s ease 0s 1 normal both">${scoreO}</div></span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX"><div class="single" style="animation: showStage 0.5s ease 0s 1 normal both">${scoreX}</div></span></div>`;
 }
 
 function youWin() {
+  startScreen.style.animation = "withFilter 0.5s ease 0s 1 normal both";
+  switchMode.style.animation = "withFilter 0.5s ease 0s 1 normal both";
+  stage.style.animation = "withFilter 0.5s ease 0s 1 normal both";
 
+  whoWins.style.animation = "showStage 0.5s ease 0s 1 normal both";
+  whoWins.style.display = "flex";
+
+  if (playerTurn == 1) {
+    p.innerHTML =
+      "Player <sub><img src='../media/rec.png' height='25px'></sub> win!";
+  } else {
+    p.innerHTML =
+      "Player <sub><img src='../media/cross.png' height='25px'></sub> win!";
+  }
+
+  document.addEventListener("click", closeWindow);
+}
+
+function closeWindow() {
+  startScreen.style.animation = "noFilter 0.5s ease 0s 1 normal both";
+  switchMode.style.animation = "noFilter 0.5s ease 0s 1 normal both";
+  stage.style.animation = "noFilter 0.5s ease 0s 1 normal both";
+
+  whoWins.style.animation = "hideStage 0.5s ease 0s 1 normal both";
+  whoWins.style.display = "none";
+
+  document.removeEventListener("click", closeWindow);
+
+  setTimeout(() => {
+    startScreen.style.animation = "";
+    switchMode.style.animation = "";
+    stage.style.animation = "";
+  }, 500);
+
+  resetGame()
 }
