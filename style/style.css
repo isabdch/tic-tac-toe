@@ -443,30 +443,6 @@ p {
     letter-spacing: 2px;
 }
 
-@media screen and (max-width: 537px) {
-    .content {
-        width: 90px;
-        height: 90px;
-    }
-
-    .scorePO, .scorePX, #playBtn {
-        font-size: 0.7rem;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .switchMode {
-        margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .content {
-        width: 60px;
-        height: 60px;
-    }
-}
-
 h4 {
     left: 50%;
     transform: translate(-50%);
@@ -486,4 +462,36 @@ a {
 
 a:hover {
     color: #fceaf6d8;
+}
+
+@media screen and (max-width: 537px) {
+    .content {
+        width: 90px;
+        height: 90px;
+    }
+
+    .scorePO, .scorePX, #playBtn {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .switchMode {
+        margin-left: 0;
+    }
+    
+    .switchMode {
+        margin: 0;
+        top: 200px;
+        transform: rotate(90Deg);
+        position: fixed;
+        box-shadow: 1px -1px 4px #000000;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .content {
+        width: 60px;
+        height: 60px;
+    }
 }
