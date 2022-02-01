@@ -119,9 +119,14 @@ body {
     background-color: #1c1919;
 }
 
+.totalScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .startScreen {
-    margin-left: 50%;
-    transform: translate(-50%);
+    top: 0;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -211,20 +216,15 @@ body {
 }
 
 .switchMode {
-    /* position: absolute;
-    /*
-    top: 50%;
-    transform: translate(0, -50%); */
+    margin-right: 20px;
+    margin-left: -70px;
     height: 120px;
     width: 50px;
     border-radius: 50px;
     background-color: #2e2b2d;
-    /* border: 2px solid #f930ef93; */
     box-shadow: 1px 1px 4px #000000;
-    margin-left: 420px;
-    /* 20px a menos do board*/
     display: none;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -366,9 +366,7 @@ body {
 .btns {
     display: none;
     position: absolute;
-    left: 50%;
     top: 84%;
-    transform: translate(-50%);
     display: flex;
     gap: 15px;
 }
@@ -445,6 +443,26 @@ p {
     letter-spacing: 2px;
 }
 
-@media screen and (max-width: 2150px) {
-    
+@media screen and (max-width: 537px) {
+    .content {
+        width: 90px;
+        height: 90px;
+    }
+
+    .scorePO, .scorePX, #playBtn {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .switchMode {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .content {
+        width: 60px;
+        height: 60px;
+    }
 }

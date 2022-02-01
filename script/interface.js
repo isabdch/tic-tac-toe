@@ -59,6 +59,12 @@ function hoverOut() {
 function startGame() {
   playBtn.style.display = "none";
   scoreDiv.style.fontSize = "0.8rem";
+  if (window.matchMedia("(max-width:537px)").matches) {
+    scoreDiv.style.fontSize = "0.6rem";
+    playBtn.style.fontSize = "0.6rem";
+    restartBtn.style.fontSize = "0.6rem";
+    returnBtn.style.fontSize = "0.6rem";
+  } 
   scoreDiv.style.animation = "showStage 2.6s ease 0s 1 normal both";
   video.style.animation = "biggerVid 0.5s ease 0s 1 normal both";
   stage.style.display = "grid";
@@ -81,6 +87,10 @@ function startGame() {
 
 function returnMenu() {
   scoreDiv.style.fontSize = "1rem";
+  if (window.matchMedia("(max-width:537px)").matches) {
+    scoreDiv.style.fontSize = "0.7rem";
+    playBtn.style.fontSize = "0.7rem";
+  } 
   scoreDiv.style.animation = "showPlayBtn 1s ease 0s 1 normal both";
   playBtn.style.animation = "showPlayBtn 1.5s ease 0s 1 normal both";
   video.style.animation = "smallerVid 0.8s ease 0s 1 normal both";
