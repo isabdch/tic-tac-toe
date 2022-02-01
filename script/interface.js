@@ -113,13 +113,13 @@ function handleClick(event) {
     setTimeout(() => {
       youWin();
       updateScore();
-      resetGame();
+      // resetGame();
     }, 300);
   }
 
   let hasTied = isTiedGame();
   if (hasTied == true) {
-    setTimeout(() => resetGame(), 1000);
+    setTimeout(() => resetGame(), 400);
   }
 
   updateSquare(position);
@@ -128,7 +128,7 @@ function handleClick(event) {
 function updateSquare(position) {
   let square = document.getElementById(position.toString());
   let symbol = board[position];
-  square.innerHTML = `<div class="${symbol} anim"></div>`;
+  square.innerHTML = `<div class="${symbol}"></div>`;
 
   if (playerTurn == 0) {
     playerUpdater.style.marginTop = "0px";
@@ -139,9 +139,46 @@ function updateSquare(position) {
 
 function clearSquares() {
   let squares = document.querySelectorAll(".content");
-  squares.forEach((square) => {
-    square.innerHTML = "";
-  });
+
+  if (c1.children[0] != undefined) {
+    c1.children[0].style.animation = "hideStage 1.8s ease 0s 1 normal both";
+  }
+  if (c2.children[0] != undefined) {
+    c2.children[0].style.animation = "hideStage 1.6s ease 0s 1 normal both";
+  }
+  if (c3.children[0] != undefined) {
+    c3.children[0].style.animation = "hideStage 1.4s ease 0s 1 normal both";
+  }
+  if (c4.children[0] != undefined) {
+    c4.children[0].style.animation = "hideStage 1.2s ease 0s 1 normal both";
+  }
+  if (c5.children[0] != undefined) {
+    c5.children[0].style.animation = "hideStage 1s ease 0s 1 normal both";
+  }
+  if (c6.children[0] != undefined) {
+    c6.children[0].style.animation = "hideStage 0.8s ease 0s 1 normal both";
+  }
+  if (c7.children[0] != undefined) {
+    c7.children[0].style.animation = "hideStage 0.6s ease 0s 1 normal both";
+  }
+  if (c8.children[0] != undefined) {
+    c8.children[0].style.animation = "hideStage 0.4s ease 0s 1 normal both";
+  }
+  if (c9.children[0] != undefined) {
+    c9.children[0].style.animation = "hideStage 0.2s ease 0s 1 normal both";
+  }
+  // squares.forEach((square) => {
+    // square.innerHTML = "";
+  // });
+  setTimeout(() => squares[0].innerHTML = "", 1100);
+  setTimeout(() => squares[1].innerHTML = "", 1000);
+  setTimeout(() => squares[2].innerHTML = "", 900);
+  setTimeout(() => squares[3].innerHTML = "", 800);
+  setTimeout(() => squares[4].innerHTML = "", 700);
+  setTimeout(() => squares[5].innerHTML = "", 600);
+  setTimeout(() => squares[6].innerHTML = "", 500);
+  setTimeout(() => squares[7].innerHTML = "", 400);
+  setTimeout(() => squares[8].innerHTML = "", 300);
 }
 
 function resetGame() {
@@ -188,7 +225,7 @@ function youWin() {
   document.querySelector("body").appendChild(whoWins);
 
   whoWins.innerHTML =
-    '<video id="winVid" src="./media/win-vid.mp4" muted autoplay loop></video><p>PLAYER WIN!</p><span>click anywhere to continue</span>';
+    '<video id="winVid" src="./media/win-vid.mp4" muted autoplay loop></video><p>PLAYER WIN!</p><span id="clickContinue">click anywhere to continue</span>';
 
   let startScreen = document.querySelector(".startScreen");
   let p = document.querySelector("p");
@@ -217,4 +254,6 @@ function closeWindow() {
   stage.style.filter = "none";
   startScreen.style.filter = "none";
   switchMode.style.filter = "none";
+
+  resetGame();
 }

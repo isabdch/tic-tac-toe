@@ -398,7 +398,7 @@ p {
     letter-spacing: 3px;
 }
 
-span {
+#clickContinue {
     text-shadow: none;
     font-size: 0.4rem;
     color: #fceaf6be;
