@@ -231,10 +231,10 @@ function youWin() {
 
   if (playerTurn == 1) {
     p.innerHTML =
-      "Player <sub><img src='../media/rec.png' height='25px'></sub> win!";
+      "Player <sub><img src='../media/rec.png' height='25px'></sub> wins!";
   } else {
     p.innerHTML =
-      "Player <sub><img src='../media/cross.png' height='25px'></sub> win!";
+      "Player <sub><img src='../media/cross.png' height='25px'></sub> wins!";
   }
 
   document.addEventListener("click", closeWindow);
