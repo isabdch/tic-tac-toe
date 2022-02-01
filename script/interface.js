@@ -119,7 +119,7 @@ function handleClick(event) {
 
   let hasTied = isTiedGame();
   if (hasTied == true) {
-    setTimeout(() => resetGame(), 800);
+    setTimeout(() => resetGame(), 1000);
   }
 
   updateSquare(position);
