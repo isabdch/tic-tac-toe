@@ -17,7 +17,7 @@
 
 ## ✏️ Project Description
 
-Tic-tac-toe game made with pure Javascript. The game has the option to choose which player will start and show whose turn is at the moment, all in the same place. Beyond that, there is the score that is saved even if you close the page. To clear the score, you just click above it.
+Tic-tac-toe game made with pure Javascript. The game has the option to choose which player will start playing and show whose turn is at the moment, all in the same place. Beyond that, there is the score which is saved even if you close the page. To clear the score, you just need to click above it.
 
 Project is created with:
 
