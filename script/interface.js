@@ -1,3 +1,4 @@
+// get HTML elements.
 let scoreDiv = document.querySelector(".scoreAndTrash");
 let playBtn = document.querySelector("#playBtn");
 let stage = document.querySelector(".container");
@@ -22,6 +23,7 @@ let startScreen = document.querySelector(".startScreen");
 let p = document.querySelector("p");
 let clicked = false;
 
+// add events to the elements.
 playBtn.addEventListener("click", startGame);
 returnBtn.addEventListener("click", returnMenu);
 document.addEventListener("DOMContentLoaded", () => {
@@ -46,6 +48,7 @@ switchMode.addEventListener("mouseout", hoverOut);
 switchMode.addEventListener("click", changePlayer);
 scoreDiv.addEventListener("click", clearScore);
 
+// functions
 function hoverIn() {
   playerUpdater.style.backgroundColor = "#5e535a";
 }
@@ -54,6 +57,7 @@ function hoverOut() {
   playerUpdater.style.backgroundColor = "#463e43";
 }
 
+// when the play button is clicked.
 function startGame() {
   playBtn.style.display = "none";
   scoreDiv.style.fontSize = "0.8rem";
@@ -83,6 +87,7 @@ function startGame() {
   switchMode.style.animation = "showStage 2s ease 0s 1 normal both";
 }
 
+// when the return button is clicked.
 function returnMenu() {
   scoreDiv.style.fontSize = "1rem";
   if (window.matchMedia("(max-width:537px)").matches) {
@@ -103,6 +108,7 @@ function returnMenu() {
   playBtn.style.display = "block";
 }
 
+// when clicked in some square.
 function handleClick(event) {
   clicked = true;
   if (clicked == true) {
@@ -111,6 +117,7 @@ function handleClick(event) {
     switchMode.removeEventListener("mouseout", hoverOut);
     switchMode.style.cursor = "default";
   }
+
   let square = event.target;
   let position = square.id;
 
@@ -129,6 +136,7 @@ function handleClick(event) {
   updateSquare(position);
 }
 
+// updates square with the symbol and the switch when it's clicked.
 function updateSquare(position) {
   let square = document.getElementById(position.toString());
   let symbol = board[position];
@@ -141,6 +149,7 @@ function updateSquare(position) {
   }
 }
 
+// clear the squares from the symbols.
 function clearSquares() {
   let squares = document.querySelectorAll(".content");
 
@@ -183,6 +192,7 @@ function clearSquares() {
   setTimeout(() => (squares[8].innerHTML = ""), 200);
 }
 
+// reset the game cleaning the squares and the variables.
 function resetGame() {
   resetVariables();
   clearSquares();
@@ -193,6 +203,7 @@ function resetGame() {
   switchMode.style.cursor = "pointer";
 }
 
+// if the switch is clicked, it changes the player's turn.
 function changePlayer() {
   playerTurn = playerTurn == 0 ? 1 : 0;
   if (playerTurn == 1) {
@@ -202,6 +213,7 @@ function changePlayer() {
   }
 }
 
+// updates the score.
 function updateScore() {
   if (gameOver == true && playerTurn == 1) {
     scoreO++;
@@ -214,6 +226,7 @@ function updateScore() {
   }
 }
 
+// when clicked, clears all the score.
 function clearScore() {
   localStorage.clear();
   scoreO = 0;
@@ -221,6 +234,7 @@ function clearScore() {
   scoreDiv.innerHTML = `<div class="scorePO">Player <i class="fa-regular fa-circle"></i> <span id="scrO"><div class="single" style="animation: showStage 1s ease 0s 1 normal both">${scoreO}</div></span></div> <div class="scorePX">Player <i class="fa-solid fa-x"></i> <span id="scrX"><div class="single" style="animation: showStage 0.5s ease 0s 1 normal both">${scoreX}</div></span></div>`;
 }
 
+// when some player win.
 function youWin() {
   startScreen.style.animation = "withFilter 0.5s ease 0s 1 normal both";
   switchMode.style.animation = "withFilter 0.5s ease 0s 1 normal both";
@@ -240,6 +254,7 @@ function youWin() {
   document.addEventListener("click", closeWindow);
 }
 
+// to close the winner's window.
 function closeWindow() {
   startScreen.style.animation = "noFilter 0.5s ease 0s 1 normal both";
   switchMode.style.animation = "noFilter 0.5s ease 0s 1 normal both";

@@ -17,6 +17,7 @@ let scoreO = 0;
 let scoreX = 0;
 
 // functions
+// to switch player turns and its symbol.
 function handleMove(position) {
   if (gameOver) {
     return;
@@ -32,6 +33,7 @@ function handleMove(position) {
   return gameOver;
 }
 
+// to check if 3 squares of the board are equal.
 function isWin() {
   for (let i = 0; i < winStates.length; i++) {
     let sequence = winStates[i];
@@ -50,12 +52,14 @@ function isWin() {
   return false;
 }
 
+// to reset all variables in case the game is over and etc.
 function resetVariables() {
   board = ["", "", "", "", "", "", "", "", ""];
   playerTurn = 0;
   gameOver = false;
 }
 
+// to check if no one won the game at the end of it.
 function isTiedGame() {
   if (
     board[0] != "" &&
