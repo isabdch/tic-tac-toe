@@ -130,12 +130,18 @@ body {
 }
 
 .totalScreen {
-    display: flex;
+    display: grid;
+    justify-items: center;
     align-items: center;
+    gap: 0;
     justify-content: center;
+    align-content: center;
+    grid-template-areas: "a1 a1 a1"
+                         "a2 a3 a3";
 }
 
 .startScreen {
+    grid-area: a1;
     top: 0;
     display: flex;
     flex-flow: column nowrap;
@@ -153,7 +159,6 @@ body {
 
 .scoreAndTrash {
     display: inline;
-    margin-bottom: 30px;
 }
 
 .scorePO, .scorePX {
@@ -226,8 +231,8 @@ body {
 }
 
 .switchMode {
+    grid-area: a2;
     margin-right: 20px;
-    margin-left: -70px;
     height: 120px;
     width: 50px;
     border-radius: 50px;
@@ -261,6 +266,7 @@ body {
 }
 
 .container {
+    grid-area: a3;
     height: 100vh;
     display: none;
     grid-template-areas: "c1 c2 c3"
@@ -507,5 +513,11 @@ a:hover {
     .content {
         width: 60px;
         height: 60px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .scorePO, .scorePX {
+        margin: 3px;
     }
 }
